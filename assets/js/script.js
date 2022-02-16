@@ -1,7 +1,3 @@
-$(document).ready(function () {
-  $("#title").style("color", "red");
-});
-
 let stars = document.getElementById("stars");
 let moon = document.getElementById("moon");
 let mountains_behind = document.getElementById("mountains_behind");
@@ -21,19 +17,51 @@ window.addEventListener("scroll", function () {
   text.style.marginTop = value * 1.5 + "px";
   btn.style.marginTop = value * 1.5 + "px";
   header.style.top = value * 0.5 + "px";
-  title.style.opacity = value * 0.1;
 });
 
 $("#btn").click(function (event) {
   event.preventDefault();
-  //calculate destination place
   var dest = 0;
   if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
     dest = $(document).height() - $(window).height();
   } else {
     dest = $(this.hash).offset().top;
   }
-  //go to destination
   $("html,body").animate({ scrollTop: dest }, 3000, "swing");
 });
 
+function checkForVisibility() {
+  var titles = document.querySelectorAll(".title");
+  var paragraph = document.querySelectorAll(".paragraph");
+  titles.forEach(function (header) {
+    if (isElementInViewport(header)) {
+      header.classList.add("Visible");
+    } else {
+      header.classList.remove("Visible");
+    }
+  });
+
+  paragraph.forEach(function (text) {
+    if (isElementInViewport(text)) {
+      text.classList.add("Visible");
+    }
+  });
+}
+
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+if (window.addEventListener) {
+  addEventListener("DOMContentLoaded", checkForVisibility, false);
+  addEventListener("load", checkForVisibility, false);
+  addEventListener("scroll", checkForVisibility, false);
+}
