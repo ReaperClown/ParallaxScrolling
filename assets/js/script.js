@@ -65,3 +65,9 @@ if (window.addEventListener) {
   addEventListener("load", checkForVisibility, false);
   addEventListener("scroll", checkForVisibility, false);
 }
+
+const html = new Scrooth({
+  strength: 7,
+  acceleration: 2.2,
+  deceleration: 0.975,
+});
