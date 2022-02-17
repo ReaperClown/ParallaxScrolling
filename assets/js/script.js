@@ -4,7 +4,7 @@ setTimeout(function () {
 }, 2000);
 
 $(document).ready(function () {"use strict";
-  setTimeout(() => {
+  // setTimeout(() => {
     const html = new Scrooth();
 
     let stars = document.getElementById("stars");
@@ -160,5 +160,5 @@ $(document).ready(function () {"use strict";
       jQuery("html, body").animate({ scrollTop: 0 }, duration);
       return false;
     });
-  }, 1999);
+  // }, 1999);
 });
