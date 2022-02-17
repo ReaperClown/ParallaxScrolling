@@ -1,3 +1,5 @@
+const html = new Scrooth();
+
 let stars = document.getElementById("stars");
 let moon = document.getElementById("moon");
 let mountains_behind = document.getElementById("mountains_behind");
@@ -27,7 +29,7 @@ $("#btn").click(function (event) {
   } else {
     dest = $(this.hash).offset().top;
   }
-  $("html,body").animate({ scrollTop: dest }, 3000, "swing");
+  $("html,body").animate({ scrollTop: dest }, 2000, "swing");
 });
 
 function checkForVisibility() {
@@ -65,9 +67,3 @@ if (window.addEventListener) {
   addEventListener("load", checkForVisibility, false);
   addEventListener("scroll", checkForVisibility, false);
 }
-
-const html = new Scrooth({
-  strength: 7,
-  acceleration: 2.2,
-  deceleration: 0.975,
-});

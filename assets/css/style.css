@@ -102,6 +102,10 @@ section img#mountains_front {
   z-index: 10;
 }
 
+p {
+  margin-bottom: 30px;
+}
+
 #text {
   position: absolute;
   right: -350px;
