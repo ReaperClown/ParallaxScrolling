@@ -7,6 +7,7 @@ $(document).ready(function () {"use strict";
   // setTimeout(() => {
     const html = new Scrooth();
 
+    // Parallax #1
     let stars = document.getElementById("stars");
     let moon = document.getElementById("moon");
     let mountains_behind = document.getElementById("mountains_behind");
@@ -16,6 +17,15 @@ $(document).ready(function () {"use strict";
     let header = document.querySelector("header");
     let title = document.getElementById("title");
     const circle = document.querySelector(".circle");
+
+    // Parallax #2
+    let text2 = document.getElementById("text2");
+    let bird1 = document.getElementById("bird1");
+    let bird2 = document.getElementById("bird2");
+    let forest = document.getElementById("forest");
+    let btn2 = document.getElementById("btn2");
+    let rocks = document.getElementById("rocks");
+    let water = document.getElementById("water");
 
     window.addEventListener("scroll", function () {
       let value = window.scrollY;
@@ -27,7 +37,18 @@ $(document).ready(function () {"use strict";
       text.style.marginTop = value * 1.5 + "px";
       btn.style.marginTop = value * 1.5 + "px";
       header.style.top = value * 0.5 + "px";
+      text2.style.bottom = value * -0.05 + "px";
     });
+
+    $(window).scroll(function() {
+      var hT = $('#scroll-to').offset().top,
+          hH = $('#scroll-to').outerHeight(),
+          wH = $(window).height(),
+          wS = $(this).scrollTop();
+      if (wS > (hT+hH-wH)){
+          console.log('H1 on the view!');
+      }
+   });
 
     $("#btn").click(function (event) {
       event.preventDefault();

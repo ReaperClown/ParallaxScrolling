@@ -283,7 +283,7 @@ header ul li a:active {
 .secondParallax {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 115vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -391,6 +391,10 @@ p {
   height: 150px;
   background: #fff;
   margin-bottom: 25px;
+}
+
+#sec {
+  z-index: 1000;
 }
 
 #sec2 {
