@@ -20,6 +20,7 @@ $(document).ready(function () {"use strict";
 
     // Parallax #2
     let text2 = document.getElementById("text2");
+    let test = document.getElementById("test");
     let bird1 = document.getElementById("bird1");
     let bird2 = document.getElementById("bird2");
     let forest = document.getElementById("forest");
@@ -37,16 +38,45 @@ $(document).ready(function () {"use strict";
       text.style.marginTop = value * 1.5 + "px";
       btn.style.marginTop = value * 1.5 + "px";
       header.style.top = value * 0.5 + "px";
-      text2.style.bottom = value * -0.05 + "px";
     });
 
     $(window).scroll(function() {
-      var hT = $('#scroll-to').offset().top,
-          hH = $('#scroll-to').outerHeight(),
+      let value = window.scrollY;
+      var hT = $('#text').offset().top,
+          hH = $('#text').outerHeight(),
           wH = $(window).height(),
           wS = $(this).scrollTop();
       if (wS > (hT+hH-wH)){
-          console.log('H1 on the view!');
+        rocks.style.top = value * -0.029 + "px";
+        forest.style.top = value * -0.015 + "px";
+        bird1.style.top = value * 0.015 + "px";
+        bird1.style.left = value * 0.015 + "px";
+        bird2.style.top = value * 0.015 + "px";
+        bird2.style.right = value * -0.115 + "px";
+        btn2.style.marginTop = value * 0.15 + "px";
+      }
+      else {
+        rocks.style.top = - value * -0.029 + "px";
+        forest.style.top = - value * -0.015 + "px";
+        bird1.style.top = - value * 0.015 + "px";
+        bird1.style.left = - value * 0.015 + "px";
+        bird2.style.top = value * 0.015 + "px";
+        bird2.style.right = value * -0.115 + "px";
+        btn2.style.marginTop = -value * 0.15 + "px";
+      }
+   });
+
+    $(window).scroll(function() {
+      let value = window.scrollY;
+      var hT = $('.wrapper').offset().top,
+          hH = $('.wrapper').outerHeight(),
+          wH = $(window).height(),
+          wS = $(this).scrollTop();
+      if (wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)){
+          text2.style.top = value * 0.05 + "px";
+      }
+      else {
+        text2.style.top = - value * 0.05 + "px";
       }
    });
 
