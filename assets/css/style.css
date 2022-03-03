@@ -17,6 +17,12 @@
   --black-light: #424455;
 }
 
+html, body {
+  width:100%;
+  height:100%;
+  margin:0;
+}
+
 .loading {
   height: 100vh;
   width: 100vw;
@@ -99,7 +105,7 @@ header ul li a:active {
   color: #2b1055;
 }
 
-.circle {
+.mouse-cursor {
   position: fixed;
   display: inline-block;
   border-radius: 50%;
@@ -110,10 +116,10 @@ header ul li a:active {
   transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease,
     background-color 0.2s ease;
   pointer-events: none;
-  z-index: 1;
+  z-index: 99999;
 }
 
-.circle:before {
+.mouse-cursor:before {
   content: "";
   position: relative;
   display: block;
@@ -128,7 +134,7 @@ header ul li a:active {
     infinite;
   animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
-.circle:after {
+.mouse-cursor:after {
   content: "";
   position: absolute;
   left: 0;
@@ -144,7 +150,7 @@ header ul li a:active {
   animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 }
 
-.circle.after:before {
+.mouse-cursor.after:before {
   background-color: #7c0a6d;
 }
 
@@ -419,6 +425,34 @@ p {
   background: linear-gradient(to bottom, #1c0522, transparent);
   z-index: 1000;
 }
+
+.set-gsap {
+  display: none;
+}
+
+.btn-test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 25px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* .set-gsap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, #1c0522, transparent);
+  z-index: 1000;
+} */
 
 #sec2-wrap {
   background-color: #094b65;

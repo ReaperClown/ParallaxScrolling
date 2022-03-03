@@ -16,7 +16,7 @@ $(document).ready(function () {"use strict";
     let mountains_front = document.getElementById("mountains_front");
     let header = document.querySelector("header");
     let title = document.getElementById("title");
-    const circle = document.querySelector(".circle");
+    const circle = document.querySelector(".mouse-cursor");
 
     // Parallax #2
     let text2 = document.getElementById("text2");
@@ -137,12 +137,12 @@ $(document).ready(function () {"use strict";
 
     $(".link").mouseenter(function () {
       linkEnterHandler();
-      $(".circle").addClass("after");
+      $(".mouse-cursor").addClass("after");
     });
 
     $(".link").mouseleave(function () {
       linkLeaveHandler();
-      $(".circle").removeClass("after");
+      $(".mouse-cursor").removeClass("after");
     });
 
     function mouseMoveHandler(e) {
