@@ -1,9 +1,94 @@
+html,
+html *,
+body,
+body * {
+  cursor: none;
+}
+
 .content {
     display: none;
 }
 
 #Boarder-Scroll {
     overflow: overlay;
+}
+
+.progress-wrap {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  z-index: 9999999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.progress-wrap::after {
+  position: absolute;
+  font-family: "unicons";
+  content: "\e84b";
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  color: var(--grey);
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+.progress-wrap::before {
+  position: absolute;
+  font-family: "unicons";
+  content: "\e84b";
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  opacity: 0;
+  background-image: linear-gradient(298deg, var(--red), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+.progress-wrap svg path {
+  fill: none;
+}
+.progress-wrap svg.progress-circle path {
+  stroke: var(--grey);
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
 
 .layer-1 > .path {
@@ -620,6 +705,7 @@
     -o-transition: all 2.25s ease-in-out 1.25s;
     -webkit-transition: all 2.25s ease-in-out;
     -webkit-transition-delay: 1.25s;
+    transition-delay: 1.25s;
     transition: all 2.25s ease-in-out 1.25s;
   }
   .loader g, .loader circle {
@@ -637,6 +723,7 @@
     -o-transition: all 0.625s ease-in-out 0.15625s;
     -webkit-transition: all 0.625s ease-in-out;
     -webkit-transition-delay: 0.15625s;
+    transition-delay: 0.15625s;
     transition: all 0.625s ease-in-out 0.15625s;
   }
   .loaded .core > .path {
@@ -711,6 +798,7 @@
     -o-transition: opacity 0.1s 0.1s;
     -webkit-transition: opacity 0.1s;
     -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
     transition: opacity 0.1s 0.1s;
     -moz-animation: rotate 1.25s linear infinite;
     -webkit-animation: rotate 1.25s linear infinite;

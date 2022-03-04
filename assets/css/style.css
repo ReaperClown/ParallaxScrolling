@@ -404,8 +404,18 @@ p {
   margin-bottom: 25px;
 }
 
+#sec, #sec2-wrap {
+  text-align: center;
+}
+
+#sec p, #sec2-wrap p {
+  text-align: justify;
+  text-indent: 40px;
+}
+
 #sec {
   z-index: 1000;
+  padding: 100px 400px;
 }
 
 #sec2 {
@@ -456,6 +466,7 @@ p {
 
 #sec2-wrap {
   background-color: #094b65;
+  padding: 100px 400px;
 }
 
 #sec2 h2 {

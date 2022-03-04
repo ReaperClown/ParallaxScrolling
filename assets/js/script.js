@@ -211,5 +211,4 @@ $(document).ready(function () {"use strict";
       jQuery("html, body").animate({ scrollTop: 0 }, duration);
       return false;
     });
-  // }, 1999);
 });
