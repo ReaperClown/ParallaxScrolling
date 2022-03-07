@@ -109,6 +109,9 @@ $(document).ready(function () {"use strict";
         if (isElementInViewport(text)) {
           text.classList.add("Visible");
         }
+        else {
+          text.classList.remove("Visible");
+        }
       });
     }
 
